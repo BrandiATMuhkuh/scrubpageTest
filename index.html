@@ -27,31 +27,6 @@
     	]
     </script>
     <script src="http://api.local.pagescrub.com:8080/PageScrub.js"></script>
-    <script src="http://api.local.pagescrub.com:8080/static.js"></script>
-    
-    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-    
-    <script type="text/javascript">
-    var Firebase = new Firebase('https://pagescrub.firebaseio.com');
-    // Create a callback to handle the result of the authentication
-	// Create a callback to handle the result of the authentication
-	function authHandler(error, authData) {
-	  if (error) {
-	    console.log("Login Failed!", error);
-	  } else {
-	    console.log("Authenticated successfully with payload:", authData);
-	  }
-	}
-	
-	console.log('is logged in ',Firebase.getAuth());
-	
-	// Alternatively, authenticate users anonymously
-	function letsAuth(){
-	Firebase.authAnonymously(authHandler);	
-	}
-	
-    
-    </script>
     
     <script type="text/javascript" charset="utf-8">
 
@@ -63,6 +38,16 @@
         e.parentNode.insertBefore(L,e)})(window,document,'script','_googCsa');
       
       });
+      
+      //Manuels code
+	pageScrub.scrubThis(function(){
+		var body = document.getElementsByTagName('body')[0]
+		for (var i in adScripts) {
+			var script = document.createElement('script');
+			script.src = adScripts[i];
+			body.appendChild(script);
+		}
+	});	
       </script>
     
   </head>
