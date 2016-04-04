@@ -43,8 +43,13 @@
 	  }
 	}
 	
+	console.log('is logged in ',Firebase.getAuth());
+	
 	// Alternatively, authenticate users anonymously
-	Firebase.authAnonymously(authHandler);
+	function letsAuth(){
+	Firebase.authAnonymously(authHandler);	
+	}
+	
     
     </script>
     
