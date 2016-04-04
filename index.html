@@ -29,6 +29,25 @@
     <script src="http://api.local.pagescrub.com:8080/PageScrub.js"></script>
     <script src="http://api.local.pagescrub.com:8080/static.js"></script>
     
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    
+    <script type="text/javascript">
+    
+    // Create a callback to handle the result of the authentication
+	// Create a callback to handle the result of the authentication
+	function authHandler(error, authData) {
+	  if (error) {
+	    console.log("Login Failed!", error);
+	  } else {
+	    console.log("Authenticated successfully with payload:", authData);
+	  }
+	}
+	
+	// Alternatively, authenticate users anonymously
+	ref.authAnonymously(authHandler);
+    
+    </script>
+    
     <script type="text/javascript" charset="utf-8">
 
       pageScrub.scrubThis(function(){
